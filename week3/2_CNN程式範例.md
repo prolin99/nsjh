@@ -110,7 +110,19 @@ https://www.tensorflow.org/tutorials/images/cnn?hl=zh-tw
 ```
 # 3.使用別人的Model[Google InceptionV3]進行圖片辨識
 ```
-!wget https://images.freeimages.com/images/large-previews/0cd/mango-1327290.jpg
+#下載網路上的一張芒果圖
+#!wget https://images.freeimages.com/images/large-previews/0cd/mango-1327290.jpg
+
+#改自己上傳一張圖片
+from google.colab import files
+print('上傳一張要辨識的圖片')
+uploaded = files.upload()
+#檔案及大小
+for fn in uploaded.keys():
+  print('User uploaded file "{name}" with length {length} bytes'.format(
+      name=fn, length=len(uploaded[fn])))
+#上傳的檔案名      
+fn  
 ```
 ```
 # -*- coding: utf-8 -*-
@@ -139,7 +151,8 @@ def read_img(img_path, resize=(299,299)):
     return img_decode
 
 # 
-img_path = 'mango-1327290.jpg' # 要辨識的圖片
+#img_path = 'mango-1327290.jpg' # 要辨識的圖片
+img_path = fn  # 要辨識的上傳圖片
 
 img = read_img(img_path) #讀取圖片
 
