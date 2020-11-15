@@ -32,7 +32,7 @@ def Nice_to_meet_you( par ):
 ```
 ###
 ```
-上傳檔案到google drive
+上傳檔案到google drive 例如 pylib 目錄下
 將google drive mount到Colab 
 執行底下程式
 ```
@@ -40,7 +40,16 @@ def Nice_to_meet_you( par ):
 ```
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
- 
+
+
+from google.colab import drive
+#直接在程式中掛載我的雲端硬碟，
+drive.mount('/content/drive')
+
+import sys
+#指定工作目錄
+sys.path.append('/content/drive/My Drive/pylib/')
+
 # 導|載入模組
 import my_module.Nice_to_meet_you as haha2
  
